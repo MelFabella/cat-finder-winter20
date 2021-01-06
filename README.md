@@ -1,24 +1,21 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+        Cat Finder
 
-Things you may want to cover:
+          Users
+            email
+            default
+            first name
+            last name
+            role
 
-* Ruby version
+          has many cats
 
-* System dependencies
+          Cats
+            nombre
+            color
+            avatar
+            age
+            breed
+            user_id fk
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+          belongs_to user

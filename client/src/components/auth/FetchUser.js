@@ -4,9 +4,10 @@ import { AuthConsumer } from "../../providers/AuthProvider";
 
 class FetchUser extends Component {
   state = { loaded: false };
-  
+
   componentDidMount() {
     const { authenticated, setUser } = this.props;
+
     if (authenticated) {
       this.loaded();
     } else {
@@ -31,6 +32,7 @@ class FetchUser extends Component {
   }
 
   loaded = () => this.setState({ loaded: true, });
+
   render() {
     return this.state.loaded ? this.props.children : null;
   }

@@ -1,19 +1,24 @@
 import { Component } from 'react';
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Button, Form, Segment, Header } from 'semantic-ui-react';
+
 class Login extends Component {
   state = { email: '', password: '' }
+  
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password, } = this.state;
     this.props.handleLogin({ email, password, }, this.props.history);
   }
+  
   handleChange = (e) => {
     const { name, value, } = e.target;
     this.setState({ [name]: value, });
   }
+
   render() {
     const { email, password, } = this.state;
+  
     return (
       <Segment basic>
         <Header as='h1' textAlign='center'>Login</Header>
@@ -44,9 +49,11 @@ class Login extends Component {
     )
   }
 }
+
 const ConnectedLogin = (props) => (
   <AuthConsumer>
     { auth => <Login {...props} {...auth} />}
   </AuthConsumer>
 )
+
 export default ConnectedLogin;
